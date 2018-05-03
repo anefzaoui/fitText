@@ -10,9 +10,21 @@ The typical use case in this would be in buttons were the text length in a langu
 
 The solution would be to resize the font size of the text; i.e. scale it up or down as needed in order for it to fit.
 
+
+## Install and Requirements
+
+Simply run `npm install` from within the cloned repo.
+This will install `express`, `mocha`, `chai`, and `Puppeteer`
+
+## Try it
+
+- `npm start` will open a server on port `3000` to preview a test page that provides input field and 2 range sliders for both the width and the height of the box containing the text so you can change box and see how the result will look like.
+
+- `npm run test` will run mocha against `./test/fitText.test.js` and produce results in the console.
+
 ## Methodology
 
-As far as I understand the challenge; there are to methods to accomplish this.
+As far as I understand the challenge; there are mainly to ways/methods to accomplish this.
 
 "Mathematical", and "Graphical".
 
@@ -30,8 +42,8 @@ We create a hidden DOM element (hidden box) that is exactly the size of the text
 
 The only downside to this method is that executing it so many times (100s of times) will make a noticeable lag. However for our purpose here it serves us well and more accurate than the first solution.
 
-## Where's NodeJS, ES6, Webpack and Babel?
-While it's fun to work on `fitText` in such an environment where ES6 reduces the amount of code we write, Babel transpiles it to a version of JS that the browser can understand, and Webpack to bundle and minify our library. I think a simple solution (simple in terms of lines of code and number of files) requires a simple setup.
+## Where's ES6, Webpack and Babel?
+While it's fun to work on `fitText` in such an environment where ES6 reduces the amount of code we write, Babel transpiles it to a version of JS that the browser can understand, and Webpack to bundle and minify our library. I think a simple solution (simple in terms of lines of code and number of files) requires a simple setup. Thus, only Nodejs and Puppeteer are present to provide a container for Mocha and Chai to run our tests.
 
 ## Improvements
 
